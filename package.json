@@ -1,0 +1,22 @@
+{
+  "name": "swoosh-api",
+  "version": "1.0.0",
+  "description": "Convert your Apple music links to Spotify links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zeesky-code/Swoosh-API.git"
+  },
+  "author": "Zainab Lawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zeesky-code/Swoosh-API/issues"
+  },
+  "homepage": "https://github.com/Zeesky-code/Swoosh-API#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
