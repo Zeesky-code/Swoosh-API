@@ -14,15 +14,15 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json());
 app.use(cors());
 
+app.use('/search', searchRouter)
 
-app.get('/', (req,res)=>{
+app.all('/', (req,res)=>{
     res.status(200).json({
         status: "true",
         message: "Welcome to Swoosh"
     })
 })
 
-app.use('/search', searchRouter)
 
 
 app.listen(PORT, () => {

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Zeesky-code/Swoosh-API#readme",
   "dependencies": {
+    "@aghajari/jssoup": "^1.0.2",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
