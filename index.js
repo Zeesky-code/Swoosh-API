@@ -15,12 +15,15 @@ app.use(express.json());
 app.use(cors());
 
 
-app.all('/', (req,res)=>{
+app.get('/', (req,res)=>{
     res.status(200).json({
         status: "true",
         message: "Welcome to Swoosh"
     })
 })
+
+app.use('/search', searchRouter)
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
