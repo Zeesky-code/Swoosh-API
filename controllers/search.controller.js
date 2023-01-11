@@ -1,16 +1,36 @@
-const jssoup = require('@aghajari/jssoup');
+const Crawler = require('crawler');
 
 
 async function getSpotifyLink(req,res){
+
     const url = req.body.url;
-    const doc = await jssoup.loadFromURL(url);
-    const title = doc.title();
+    let title = await getTitle(url);
+    title = title.replace(/[\u{0080}-\u{FFFF}]/gu,"");
     res.status(200).json({
-        "title: ": title,
+        "status": true,
+        "title": title
     })
+    
 
-
+    
 }
 
-
+async function getTitle(url) {
+    const c = new Crawler();
+    return new Promise(function (resolve, reject) {
+    // Queue just one URL, with default callback
+        c.direct({
+            uri: url,
+            skipEventRequest: false, // default to true, direct requests won't trigger Event:'request'
+            callback: (error, response, done) => {
+                if (error) {
+                    reject(error)
+                } else {
+                    resolve(response.$('title').text());
+                    return response.$('title').text();
+                }
+            }
+        });
+    })
+}
 module.exports = {getSpotifyLink}
