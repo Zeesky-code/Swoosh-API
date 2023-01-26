@@ -23,7 +23,10 @@ async function getSpotifyLink(req,res){
     
     res.status(200).json({
         "status": true,
-        "title": title
+        "data":{
+            "title": title
+        }
+        
     })
     
 
